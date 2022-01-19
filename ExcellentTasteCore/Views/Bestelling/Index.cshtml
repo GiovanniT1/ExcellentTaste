@@ -7,7 +7,8 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a> |
+    <a href="https://localhost:44300/consumptieItem">Product Prijzen</a>
 </p>
 <table class="table">
     <thead>
@@ -43,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.DateTimeBereidingConsumptie)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Prijs)
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.Prijs)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Totaal)
