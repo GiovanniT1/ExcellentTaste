@@ -42,6 +42,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Klant)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReserveringId)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -79,9 +82,12 @@
                 @Html.DisplayFor(modelItem => item.Klant.KlantNaam)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ReserveringId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReserveringId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReserveringId">Delete</a> |
+                @Html.DisplayFor(modelItem => item.ReserveringId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReserveringId">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ReserveringId">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ReserveringId">Delete</a> 
                 <a href="https://localhost:44300/Bestelling/Create">Bestel</a>
             </td>
         </tr>
