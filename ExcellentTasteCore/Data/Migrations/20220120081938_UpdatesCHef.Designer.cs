@@ -4,14 +4,16 @@ using ExcellentTasteCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ExcellentTasteCore.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220120081938_UpdatesCHef")]
+    partial class UpdatesCHef
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,9 +42,6 @@ namespace ExcellentTasteCore.Data.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(4)")
                         .HasColumnName("ConsumptieItemCode");
-
-                    b.Property<string>("ConsumptieItemNaam")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DateTimeBereidingConsumptie")
                         .HasColumnType("datetime")
