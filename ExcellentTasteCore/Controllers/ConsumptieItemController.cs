@@ -19,10 +19,18 @@ namespace ExcellentTasteCore.Controllers
             _context = context;
         }
 
-        // GET: ConsumptieItem
+        // GET: Gerecht
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.ConsumptieItems.Include(c => c.ConsumptieGroep);
+            var applicationDbContext = _context.ConsumptieItems.Include(c => c.ConsumptieGroep).Where(c => c.ConsumptieGroepCode.Contains("ijn") || c.ConsumptieGroepCode.Contains("koh") || c.ConsumptieGroepCode.Contains("kov") || c.ConsumptieGroepCode.Contains("mon") || c.ConsumptieGroepCode.Contains("veh") || c.ConsumptieGroepCode.Contains("vih") || c.ConsumptieGroepCode.Contains("vlh") || c.ConsumptieGroepCode.Contains("wah") || c.ConsumptieGroepCode.Contains("wav"));
+
+            return View( await applicationDbContext.ToListAsync());
+        }
+
+        // GET:  Drank
+        public async Task<IActionResult> Drank()
+        {
+            var applicationDbContext = _context.ConsumptieItems.Include(c => c.ConsumptieGroep).Where(c => c.ConsumptieGroepCode.Contains("bik") || c.ConsumptieGroepCode.Contains("fik") || c.ConsumptieGroepCode.Contains("wdk") || c.ConsumptieGroepCode.Contains("wik"));
             return View(await applicationDbContext.ToListAsync());
         }
 

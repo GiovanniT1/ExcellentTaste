@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ExcellentTasteCore.Models.ConsumptieItem>
+
+@{
+    ViewData["Title"] = "Drank";
+}
+
+<h1>Drank</h1>
+
+<p>
+    <a asp-action="Create">Drank toevoegen</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsumptieItemNaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsumptieGroep)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieItemNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieGroep.ConsumptieGroepCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ConsumptieItemCode">Wijzigen</a> |
+                <a asp-action="Details" asp-route-id="@item.ConsumptieItemCode">Informatie</a> |
+                <a asp-action="Delete" asp-route-id="@item.ConsumptieItemCode">Verwijderen</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
