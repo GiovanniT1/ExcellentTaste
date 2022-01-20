@@ -19,10 +19,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-
                         <!-- Kijkt of de gebruiker is ingelogd. Zo ja toont het alle onderdelen voor de medewerker in de Navigatiebalk. Zo niet? Dan toont hij alleen home voor de klant die de site bezoekt -->
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -37,6 +33,12 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Reservering" asp-action="Index">Reserveringen</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Barman" asp-action="Index">Bestellingen Drank</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Chefkok" asp-action="Index">Bestellingen Gerechten</a>
                             </li>
                         }
                         else { }
