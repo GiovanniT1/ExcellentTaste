@@ -29,6 +29,9 @@
                 @Html.DisplayNameFor(model => model.ConsumptieItem)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ConsumptieItem.ConsumptieItemNaam)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Reservering)
             </th>
             <th></th>
@@ -51,6 +54,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Reservering.ReserveringId)
